@@ -1,0 +1,111 @@
+# Group Addresses
+Welcome to the addresses API. This API provides access to the addresses service.
+
+## addresses [/addresses]
+
+### Create address [POST]
+
+Create a new address
+
++ Request address (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+    + Attributes
+
+        + user (user)
+        + userId: 1 (number)
+        + postal: POSTAL (string)
+        + state: STATE (string)
+        + city: CITY (string)
+        + neighborhood: NEIGHBORHOOD (string)
+        + street: STREET (string)
+        + number: 1 (number)
+        + complement: COMPLEMENT (string)
+
++ Response 201 (application/json; charset=utf-8)
+    + Attributes (address, fixed)
+
+### Get addresses [GET]
+
+Returns an address list.
+
++ Request (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (array, fixed)
+        + (address)
+
+## address details [/addresses/{id}]
+
++ Parameters
+    + id: `1` (enum[string]) - The ID of the desired address.
+        + Members
+            + `1`
+            + `2`
+            + `3`
+
+### Get address [GET]
+
+Returns an address.
+
++ Request (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (address, fixed)
+
+### Update address [PUT]
+
+Update an address.
+
++ Request address (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+    + Attributes
+
+        + user (user)
+        + userId: 1 (number)
+        + postal: POSTAL (string)
+        + state: STATE (string)
+        + city: CITY (string)
+        + neighborhood: NEIGHBORHOOD (string)
+        + street: STREET (string)
+        + number: 1 (number)
+        + complement: COMPLEMENT (string)
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (address, fixed)
+
+### Delete address [DELETE]
+
+Delete an address.
+
++ Request (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+
++ Response 204
+
+# Data Structures
+## address (object)
+
++ id: *1* (number)
++ user (user)
++ userId: *1* (number)
++ postal: *POSTAL* (string)
++ state: *STATE* (string)
++ city: *CITY* (string)
++ neighborhood: *NEIGHBORHOOD* (string)
++ street: *STREET* (string)
++ number: *1* (number)
++ complement: *COMPLEMENT* (string)
++ createdAt: `*2000-01-01 00:00:00*` (string)
++ updatedAt: `*2000-01-01 00:00:00*` (string)

@@ -1,0 +1,126 @@
+# Group Products
+Welcome to the products API. This API provides access to the products service.
+
+## products [/products]
+
+### Create product [POST]
+
+Create a new product
+
++ Request product (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+    + Attributes
+
+        + name: NAME (string)
+        + code: CODE (string)
+        + description: DESCRIPTION (string)
+        + details: DETAILS (string)
+        + provider (provider)
+        + providerId: 1 (number)
+        + category (category)
+        + categoryId: 1 (number)
+        + brand (category)
+        + brandId: 1 (number)
+        + year: 1 (number)
+        + price: 1.1 (number)
+        + shipPrice: 1.1 (number)
+        + availableQuantity: 1 (number)
+
++ Response 201 (application/json; charset=utf-8)
+    + Attributes (product, fixed)
+
+### Get products [GET]
+
+Returns a product list.
+
++ Request (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (array, fixed)
+        + (product)
+
+## product details [/products/{id}]
+
++ Parameters
+    + id: `1` (enum[string]) - The ID of the desired product.
+        + Members
+            + `1`
+            + `2`
+            + `3`
+
+### Get product [GET]
+
+Returns a product.
+
++ Request (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (product, fixed)
+
+### Update product [PUT]
+
+Update a product.
+
++ Request product (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+    + Attributes
+
+        + name: NAME (string)
+        + code: CODE (string)
+        + description: DESCRIPTION (string)
+        + details: DETAILS (string)
+        + provider (provider)
+        + providerId: 1 (number)
+        + category (category)
+        + categoryId: 1 (number)
+        + brand (category)
+        + brandId: 1 (number)
+        + year: 1 (number)
+        + price: 1.1 (number)
+        + shipPrice: 1.1 (number)
+        + availableQuantity: 1 (number)
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (product, fixed)
+
+### Delete product [DELETE]
+
+Delete a product.
+
++ Request (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+
++ Response 204
+
+# Data Structures
+## product (object)
+
++ id: *1* (number)
++ name: *NAME* (string)
++ code: *CODE* (string)
++ description: *DESCRIPTION* (string)
++ details: *DETAILS* (string)
++ provider (provider)
++ providerId: *1* (number)
++ category (category)
++ categoryId: *1* (number)
++ brand (category)
++ brandId: *1* (number)
++ year: *1* (number)
++ price: *1.1* (number)
++ shipPrice: *1.1* (number)
++ availableQuantity: *1* (number)
++ createdAt: `*2000-01-01 00:00:00*` (string)
++ updatedAt: `*2000-01-01 00:00:00*` (string)

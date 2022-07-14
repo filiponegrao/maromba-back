@@ -1,0 +1,87 @@
+# Group Brands
+Welcome to the brands API. This API provides access to the brands service.
+
+## brands [/brands]
+
+### Create brand [POST]
+
+Create a new brand
+
++ Request brand (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+    + Attributes
+
+        + name: NAME (string)
+
++ Response 201 (application/json; charset=utf-8)
+    + Attributes (brand, fixed)
+
+### Get brands [GET]
+
+Returns a brand list.
+
++ Request (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (array, fixed)
+        + (brand)
+
+## brand details [/brands/{id}]
+
++ Parameters
+    + id: `1` (enum[string]) - The ID of the desired brand.
+        + Members
+            + `1`
+            + `2`
+            + `3`
+
+### Get brand [GET]
+
+Returns a brand.
+
++ Request (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (brand, fixed)
+
+### Update brand [PUT]
+
+Update a brand.
+
++ Request brand (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+    + Attributes
+
+        + name: NAME (string)
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (brand, fixed)
+
+### Delete brand [DELETE]
+
+Delete a brand.
+
++ Request (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+
++ Response 204
+
+# Data Structures
+## brand (object)
+
++ id: *1* (number)
++ name: *NAME* (string)
++ createdAt: `*2000-01-01 00:00:00*` (string)
++ updatedAt: `*2000-01-01 00:00:00*` (string)

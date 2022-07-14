@@ -1,0 +1,96 @@
+# Group Accesses
+Welcome to the accesses API. This API provides access to the accesses service.
+
+## accesses [/accesses]
+
+### Create access [POST]
+
+Create a new access
+
++ Request access (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+    + Attributes
+
+        + user (user)
+        + userId: 1 (number)
+        + provider (provider)
+        + providerId: 1 (number)
+
++ Response 201 (application/json; charset=utf-8)
+    + Attributes (access, fixed)
+
+### Get accesses [GET]
+
+Returns an access list.
+
++ Request (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (array, fixed)
+        + (access)
+
+## access details [/accesses/{id}]
+
++ Parameters
+    + id: `1` (enum[string]) - The ID of the desired access.
+        + Members
+            + `1`
+            + `2`
+            + `3`
+
+### Get access [GET]
+
+Returns an access.
+
++ Request (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (access, fixed)
+
+### Update access [PUT]
+
+Update an access.
+
++ Request access (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+    + Attributes
+
+        + user (user)
+        + userId: 1 (number)
+        + provider (provider)
+        + providerId: 1 (number)
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (access, fixed)
+
+### Delete access [DELETE]
+
+Delete an access.
+
++ Request (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+
++ Response 204
+
+# Data Structures
+## access (object)
+
++ id: *1* (number)
++ user (user)
++ userId: *1* (number)
++ provider (provider)
++ providerId: *1* (number)
++ createdAt: `*2000-01-01 00:00:00*` (string)
++ updatedAt: `*2000-01-01 00:00:00*` (string)

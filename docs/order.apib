@@ -1,0 +1,96 @@
+# Group Orders
+Welcome to the orders API. This API provides access to the orders service.
+
+## orders [/orders]
+
+### Create order [POST]
+
+Create a new order
+
++ Request order (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+    + Attributes
+
+        + item (item)
+        + itemId: 1 (number)
+        + status: 1 (number)
+        + shipTime: 1 (number)
+
++ Response 201 (application/json; charset=utf-8)
+    + Attributes (order, fixed)
+
+### Get orders [GET]
+
+Returns an order list.
+
++ Request (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (array, fixed)
+        + (order)
+
+## order details [/orders/{id}]
+
++ Parameters
+    + id: `1` (enum[string]) - The ID of the desired order.
+        + Members
+            + `1`
+            + `2`
+            + `3`
+
+### Get order [GET]
+
+Returns an order.
+
++ Request (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (order, fixed)
+
+### Update order [PUT]
+
+Update an order.
+
++ Request order (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+    + Attributes
+
+        + item (item)
+        + itemId: 1 (number)
+        + status: 1 (number)
+        + shipTime: 1 (number)
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (order, fixed)
+
+### Delete order [DELETE]
+
+Delete an order.
+
++ Request (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+
++ Response 204
+
+# Data Structures
+## order (object)
+
++ id: *1* (number)
++ item (item)
++ itemId: *1* (number)
++ status: *1* (number)
++ shipTime: *1* (number)
++ createdAt: `*2000-01-01 00:00:00*` (string)
++ updatedAt: `*2000-01-01 00:00:00*` (string)

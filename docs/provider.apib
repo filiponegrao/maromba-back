@@ -1,0 +1,132 @@
+# Group Providers
+Welcome to the providers API. This API provides access to the providers service.
+
+## providers [/providers]
+
+### Create provider [POST]
+
+Create a new provider
+
++ Request provider (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+    + Attributes
+
+        + name: NAME (string)
+        + email: EMAIL (string)
+        + addressPostal: ADDRESSPOSTAL (string)
+        + addressState: ADDRESSSTATE (string)
+        + addressCity: ADDRESSCITY (string)
+        + addressNeighborhood: ADDRESSNEIGHBORHOOD (string)
+        + addressStreet: ADDRESSSTREET (string)
+        + addressNumber: 1 (number)
+        + addressComplement: ADDRESSCOMPLEMENT (string)
+        + cnpj: CNPJ (string)
+        + phone1: PHONE1 (string)
+        + phone2: PHONE2 (string)
+        + profileImageUrl: PROFILEIMAGEURL (string)
+        + status: 1 (number)
+        + type: 1 (number)
+        + info: INFO (string)
+
++ Response 201 (application/json; charset=utf-8)
+    + Attributes (provider, fixed)
+
+### Get providers [GET]
+
+Returns a provider list.
+
++ Request (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (array, fixed)
+        + (provider)
+
+## provider details [/providers/{id}]
+
++ Parameters
+    + id: `1` (enum[string]) - The ID of the desired provider.
+        + Members
+            + `1`
+            + `2`
+            + `3`
+
+### Get provider [GET]
+
+Returns a provider.
+
++ Request (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (provider, fixed)
+
+### Update provider [PUT]
+
+Update a provider.
+
++ Request provider (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+    + Attributes
+
+        + name: NAME (string)
+        + email: EMAIL (string)
+        + addressPostal: ADDRESSPOSTAL (string)
+        + addressState: ADDRESSSTATE (string)
+        + addressCity: ADDRESSCITY (string)
+        + addressNeighborhood: ADDRESSNEIGHBORHOOD (string)
+        + addressStreet: ADDRESSSTREET (string)
+        + addressNumber: 1 (number)
+        + addressComplement: ADDRESSCOMPLEMENT (string)
+        + cnpj: CNPJ (string)
+        + phone1: PHONE1 (string)
+        + phone2: PHONE2 (string)
+        + profileImageUrl: PROFILEIMAGEURL (string)
+        + status: 1 (number)
+        + type: 1 (number)
+        + info: INFO (string)
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (provider, fixed)
+
+### Delete provider [DELETE]
+
+Delete a provider.
+
++ Request (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+
++ Response 204
+
+# Data Structures
+## provider (object)
+
++ id: *1* (number)
++ name: *NAME* (string)
++ email: *EMAIL* (string)
++ addressPostal: *ADDRESSPOSTAL* (string)
++ addressState: *ADDRESSSTATE* (string)
++ addressCity: *ADDRESSCITY* (string)
++ addressNeighborhood: *ADDRESSNEIGHBORHOOD* (string)
++ addressStreet: *ADDRESSSTREET* (string)
++ addressNumber: *1* (number)
++ addressComplement: *ADDRESSCOMPLEMENT* (string)
++ cnpj: *CNPJ* (string)
++ phone1: *PHONE1* (string)
++ phone2: *PHONE2* (string)
++ profileImageUrl: *PROFILEIMAGEURL* (string)
++ status: *1* (number)
++ type: *1* (number)
++ info: *INFO* (string)
++ createdAt: `*2000-01-01 00:00:00*` (string)
++ updatedAt: `*2000-01-01 00:00:00*` (string)

@@ -1,0 +1,96 @@
+# Group Items
+Welcome to the items API. This API provides access to the items service.
+
+## items [/items]
+
+### Create item [POST]
+
+Create a new item
+
++ Request item (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+    + Attributes
+
+        + product (product)
+        + productId: 1 (number)
+        + quantity: 1 (number)
+        + value: 1.1 (number)
+
++ Response 201 (application/json; charset=utf-8)
+    + Attributes (item, fixed)
+
+### Get items [GET]
+
+Returns an item list.
+
++ Request (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (array, fixed)
+        + (item)
+
+## item details [/items/{id}]
+
++ Parameters
+    + id: `1` (enum[string]) - The ID of the desired item.
+        + Members
+            + `1`
+            + `2`
+            + `3`
+
+### Get item [GET]
+
+Returns an item.
+
++ Request (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (item, fixed)
+
+### Update item [PUT]
+
+Update an item.
+
++ Request item (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+    + Attributes
+
+        + product (product)
+        + productId: 1 (number)
+        + quantity: 1 (number)
+        + value: 1.1 (number)
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (item, fixed)
+
+### Delete item [DELETE]
+
+Delete an item.
+
++ Request (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+
++ Response 204
+
+# Data Structures
+## item (object)
+
++ id: *1* (number)
++ product (product)
++ productId: *1* (number)
++ quantity: *1* (number)
++ value: *1.1* (number)
++ createdAt: `*2000-01-01 00:00:00*` (string)
++ updatedAt: `*2000-01-01 00:00:00*` (string)

@@ -1,0 +1,96 @@
+# Group OrderProblems
+Welcome to the order problems API. This API provides access to the order problems service.
+
+## order problems [/order_problems]
+
+### Create order problem [POST]
+
+Create a new order problem
+
++ Request order problem (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+    + Attributes
+
+        + order (order)
+        + orderId: 1 (number)
+        + reason: REASON (string)
+        + provider: false (boolean)
+
++ Response 201 (application/json; charset=utf-8)
+    + Attributes (order_problem, fixed)
+
+### Get order problems [GET]
+
+Returns an order problem list.
+
++ Request (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (array, fixed)
+        + (order_problem)
+
+## order problem details [/order_problems/{id}]
+
++ Parameters
+    + id: `1` (enum[string]) - The ID of the desired order problem.
+        + Members
+            + `1`
+            + `2`
+            + `3`
+
+### Get order problem [GET]
+
+Returns an order problem.
+
++ Request (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (order_problem, fixed)
+
+### Update order problem [PUT]
+
+Update an order problem.
+
++ Request order_problem (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+    + Attributes
+
+        + order (order)
+        + orderId: 1 (number)
+        + reason: REASON (string)
+        + provider: false (boolean)
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (order_problem, fixed)
+
+### Delete order problem [DELETE]
+
+Delete an order problem.
+
++ Request (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+
++ Response 204
+
+# Data Structures
+## order_problem (object)
+
++ id: *1* (number)
++ order (order)
++ orderId: *1* (number)
++ reason: *REASON* (string)
++ provider: *false* (boolean)
++ createdAt: `*2000-01-01 00:00:00*` (string)
++ updatedAt: `*2000-01-01 00:00:00*` (string)

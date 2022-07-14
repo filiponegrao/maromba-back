@@ -1,0 +1,87 @@
+# Group Categories
+Welcome to the categories API. This API provides access to the categories service.
+
+## categories [/categories]
+
+### Create category [POST]
+
+Create a new category
+
++ Request category (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+    + Attributes
+
+        + name: NAME (string)
+
++ Response 201 (application/json; charset=utf-8)
+    + Attributes (category, fixed)
+
+### Get categories [GET]
+
+Returns a category list.
+
++ Request (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (array, fixed)
+        + (category)
+
+## category details [/categories/{id}]
+
++ Parameters
+    + id: `1` (enum[string]) - The ID of the desired category.
+        + Members
+            + `1`
+            + `2`
+            + `3`
+
+### Get category [GET]
+
+Returns a category.
+
++ Request (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (category, fixed)
+
+### Update category [PUT]
+
+Update a category.
+
++ Request category (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+    + Attributes
+
+        + name: NAME (string)
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (category, fixed)
+
+### Delete category [DELETE]
+
+Delete a category.
+
++ Request (application/json; charset=utf-8)
+    + Headers
+
+            Accept: application/vnd.filiponegrao+json
+
++ Response 204
+
+# Data Structures
+## category (object)
+
++ id: *1* (number)
++ name: *NAME* (string)
++ createdAt: `*2000-01-01 00:00:00*` (string)
++ updatedAt: `*2000-01-01 00:00:00*` (string)
